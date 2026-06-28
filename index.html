@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@700&display=swap');
-  
+ 
         .tail-container {
             font-family: 'Inter', system_ui, sans-serif;
         }
@@ -24,7 +24,7 @@
         .service-card {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-  
+ 
         .service-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
@@ -46,18 +46,18 @@
 <body class="tail-container text-gray-800">
     <!-- Sticky Header -->
     <header class="sticky-header bg-white shadow-md border-b border-orange-500">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
             <div class="flex items-center gap-3">
-                <div class="w-12 h-12 bg-blue-900 rounded-xl flex items-center justify-center text-white text-2xl font-bold">LP</div>
+                <div class="w-10 h-10 sm:w-12 sm:h-12 bg-blue-900 rounded-xl flex items-center justify-center text-white text-xl sm:text-2xl font-bold">LP</div>
                 <div>
-                    <h1 class="text-2xl font-bold tracking-tight heading-font text-blue-950">Local Plumbers</h1>
+                    <h1 class="text-xl sm:text-2xl font-bold tracking-tight heading-font text-blue-950">Local Plumbers</h1>
                     <p class="text-xs text-gray-500 -mt-1">Georgia • Dallas • Wylie</p>
                 </div>
             </div>
       
             <div class="flex items-center gap-4">
                 <a href="tel:8442129477"
-                   class="flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-2xl font-semibold transition-all shadow-lg text-sm md:text-base">
+                   class="flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-4 sm:px-6 py-3 rounded-2xl font-semibold transition-all shadow-lg text-sm sm:text-base whitespace-nowrap">
                     <i class="fa-solid fa-phone"></i>
                     <span>(844) 212-9477</span>
                 </a>
@@ -65,34 +65,32 @@
         </div>
     </header>
 
-    <!-- Hero Section (Professional) -->
+    <!-- Hero Section -->
     <section class="hero-bg min-h-screen flex items-center text-white relative">
-        <div class="max-w-7xl mx-auto px-6 py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-20">
             <div class="max-w-3xl">
-                <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-5 py-2 rounded-full text-sm mb-6">
+                <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm mb-6">
                     <div class="w-3 h-3 bg-emerald-400 rounded-full animate-pulse"></div>
                     24/7 EMERGENCY SERVICE AVAILABLE
                 </div>
-          
-                <h1 class="text-5xl md:text-6xl lg:text-7xl leading-tight font-bold heading-font tracking-tighter mb-6">
+         
+                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight font-bold heading-font tracking-tighter mb-6">
                     Expert Local Plumbers You Can Trust in <span class="text-orange-400">Georgia &amp; Dallas</span>
                 </h1>
-          
-                <p class="text-xl md:text-2xl lg:text-3xl text-white/90 mb-10">
+         
+                <p class="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white/90 mb-10">
                     Fast response. Honest pricing. Expert solutions for every plumbing problem.
                 </p>
-          
+         
                 <div class="flex flex-col sm:flex-row gap-4">
-                    <!-- Professional Primary CTA -->
                     <a href="tel:8442129477"
-                       class="floating-cta group bg-orange-600 hover:bg-orange-700 text-white text-xl md:text-2xl font-semibold px-10 py-6 rounded-3xl flex items-center justify-center gap-3 shadow-xl transition-all border border-orange-500 hover:border-orange-400">
-                        <i class="fa-solid fa-phone-volume text-2xl group-active:scale-110 transition-transform"></i>
-                        <span>CALL NOW: (844) 212-9477</span>
+                       class="floating-cta group bg-orange-600 hover:bg-orange-700 text-white text-lg sm:text-xl md:text-2xl font-semibold px-8 sm:px-10 py-5 sm:py-6 rounded-3xl flex items-center justify-center gap-3 shadow-xl transition-all border border-orange-500 hover:border-orange-400 w-full sm:w-auto">
+                        <i class="fa-solid fa-phone-volume text-xl sm:text-2xl group-active:scale-110 transition-transform"></i>
+                        <span class="whitespace-nowrap">CALL NOW: (844) 212-9477</span>
                     </a>
-              
-                    <!-- Professional Secondary CTA -->
+             
                     <a href="#services"
-                       class="bg-white/95 hover:bg-white text-blue-950 hover:text-blue-900 text-xl md:text-2xl font-semibold px-10 py-6 rounded-3xl flex items-center justify-center gap-3 shadow-xl border border-white/80 hover:border-white transition-all">
+                       class="bg-white/95 hover:bg-white text-blue-950 hover:text-blue-900 text-lg sm:text-xl md:text-2xl font-semibold px-8 sm:px-10 py-5 sm:py-6 rounded-3xl flex items-center justify-center gap-3 shadow-xl border border-white/80 hover:border-white transition-all w-full sm:w-auto">
                         Get Same-Day Service
                     </a>
                 </div>
@@ -100,95 +98,95 @@
         </div>
     </section>
 
-    <!-- Trust Bar (Content Centered) -->
+    <!-- Trust Bar -->
     <div class="bg-white py-6 border-b">
-        <div class="max-w-7xl mx-auto px-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <div class="grid grid-cols-3 md:grid-cols-5 gap-6 items-center text-center">
                 <div class="flex flex-col items-center gap-3">
-                    <i class="fa-solid fa-medal text-4xl text-orange-500"></i>
+                    <i class="fa-solid fa-medal text-3xl sm:text-4xl text-orange-500"></i>
                     <div>
-                        <div class="font-semibold">Licensed</div>
+                        <div class="font-semibold text-sm sm:text-base">Licensed</div>
                         <div class="text-xs text-gray-500">Texas &amp; Georgia</div>
                     </div>
                 </div>
                 <div class="flex flex-col items-center gap-3">
-                    <i class="fa-solid fa-truck-fast text-4xl text-orange-500"></i>
+                    <i class="fa-solid fa-truck-fast text-3xl sm:text-4xl text-orange-500"></i>
                     <div>
-                        <div class="font-semibold">30 Min Response</div>
+                        <div class="font-semibold text-sm sm:text-base">30 Min Response</div>
                         <div class="text-xs text-gray-500">In most areas</div>
                     </div>
                 </div>
                 <div class="flex flex-col items-center gap-3">
-                    <i class="fa-solid fa-hand-holding-dollar text-4xl text-orange-500"></i>
+                    <i class="fa-solid fa-hand-holding-dollar text-3xl sm:text-4xl text-orange-500"></i>
                     <div>
-                        <div class="font-semibold">Upfront Pricing</div>
+                        <div class="font-semibold text-sm sm:text-base">Upfront Pricing</div>
                         <div class="text-xs text-gray-500">No hidden fees</div>
                     </div>
                 </div>
                 <div class="flex flex-col items-center gap-3">
-                    <i class="fa-solid fa-star text-4xl text-orange-500"></i>
+                    <i class="fa-solid fa-star text-3xl sm:text-4xl text-orange-500"></i>
                     <div>
-                        <div class="font-semibold">100% Satisfaction</div>
+                        <div class="font-semibold text-sm sm:text-base">100% Satisfaction</div>
                         <div class="text-xs text-gray-500">Guaranteed</div>
                     </div>
                 </div>
                 <div class="flex flex-col items-center gap-3">
-                    <div class="bg-emerald-100 text-emerald-700 text-xs font-semibold px-5 py-3 rounded-2xl w-fit mx-auto">Same Day Service</div>
+                    <div class="bg-emerald-100 text-emerald-700 text-xs font-semibold px-4 py-2.5 rounded-2xl w-fit mx-auto">Same Day Service</div>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- Services Section -->
-    <section id="services" class="py-24 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
+    <section id="services" class="py-20 sm:py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12 sm:mb-16">
                 <span class="text-orange-600 font-semibold tracking-widest">WHAT WE DO</span>
-                <h2 class="text-5xl heading-font font-bold text-blue-950 mt-3">Professional Plumbing Services</h2>
-                <p class="mt-4 text-xl text-gray-600 max-w-2xl mx-auto">From emergency repairs to complete system installations — we’ve got you covered across Georgia and Dallas.</p>
+                <h2 class="text-4xl sm:text-5xl heading-font font-bold text-blue-950 mt-3">Professional Plumbing Services</h2>
+                <p class="mt-4 text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">From emergency repairs to complete system installations — we’ve got you covered across Georgia and Dallas.</p>
             </div>
-      
+     
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="service-card bg-white rounded-3xl p-8 shadow-sm border border-gray-100">
-                    <div class="w-14 h-14 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center text-3xl mb-6">🚰</div>
-                    <h3 class="text-2xl font-semibold mb-3">Emergency Plumber Georgia &amp; Dallas</h3>
-                    <p class="text-gray-600">Bursting pipes, overflowing toilets, or no water? We respond fast 24/7.</p>
+                <div class="service-card bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-gray-100">
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center text-3xl mb-6">🚰</div>
+                    <h3 class="text-xl sm:text-2xl font-semibold mb-3">Emergency Plumber Georgia &amp; Dallas</h3>
+                    <p class="text-gray-600 text-sm sm:text-base">Bursting pipes, overflowing toilets, or no water? We respond fast 24/7.</p>
                     <a href="tel:8442129477" class="mt-6 inline-block text-orange-600 font-medium hover:underline">Call for emergency →</a>
                 </div>
-          
-                <div class="service-card bg-white rounded-3xl p-8 shadow-sm border border-gray-100">
-                    <div class="w-14 h-14 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center text-3xl mb-6">🧹</div>
-                    <h3 class="text-2xl font-semibold mb-3">Drain Cleaning Georgia &amp; Dallas</h3>
-                    <p class="text-gray-600">Clogged drains, slow sinks, and sewer backups cleared professionally with hydro jetting.</p>
+         
+                <div class="service-card bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-gray-100">
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center text-3xl mb-6">🧹</div>
+                    <h3 class="text-xl sm:text-2xl font-semibold mb-3">Drain Cleaning Georgia &amp; Dallas</h3>
+                    <p class="text-gray-600 text-sm sm:text-base">Clogged drains, slow sinks, and sewer backups cleared professionally with hydro jetting.</p>
                 </div>
-          
-                <div class="service-card bg-white rounded-3xl p-8 shadow-sm border border-gray-100">
-                    <div class="w-14 h-14 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center text-3xl mb-6">🔥</div>
-                    <h3 class="text-2xl font-semibold mb-3">Water Heater Repair &amp; Installation</h3>
-                    <p class="text-gray-600">Tank &amp; tankless water heater repair Georgia, installation in Wylie and surrounding areas.</p>
+         
+                <div class="service-card bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-gray-100">
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center text-3xl mb-6">🔥</div>
+                    <h3 class="text-xl sm:text-2xl font-semibold mb-3">Water Heater Repair &amp; Installation</h3>
+                    <p class="text-gray-600 text-sm sm:text-base">Tank &amp; tankless water heater repair Georgia, installation in Wylie and surrounding areas.</p>
                 </div>
-          
-                <div class="service-card bg-white rounded-3xl p-8 shadow-sm border border-gray-100">
-                    <div class="w-14 h-14 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center text-3xl mb-6">🪠</div>
-                    <h3 class="text-2xl font-semibold mb-3">Sewer Line Replacement Georgia &amp; Wylie</h3>
-                    <p class="text-gray-600">Trenchless technology for minimal disruption. Expert sewer line repair and replacement.</p>
+         
+                <div class="service-card bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-gray-100">
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center text-3xl mb-6">🪠</div>
+                    <h3 class="text-xl sm:text-2xl font-semibold mb-3">Sewer Line Replacement Georgia &amp; Wylie</h3>
+                    <p class="text-gray-600 text-sm sm:text-base">Trenchless technology for minimal disruption. Expert sewer line repair and replacement.</p>
                 </div>
-          
-                <div class="service-card bg-white rounded-3xl p-8 shadow-sm border border-gray-100">
-                    <div class="w-14 h-14 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center text-3xl mb-6">🔧</div>
-                    <h3 class="text-2xl font-semibold mb-3">Plumbing Repair Dallas</h3>
-                    <p class="text-gray-600">Leaks, fixtures, toilets, faucets, garbage disposals, and complete bathroom &amp; kitchen remodel plumbing.</p>
+         
+                <div class="service-card bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-gray-100">
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center text-3xl mb-6">🔧</div>
+                    <h3 class="text-xl sm:text-2xl font-semibold mb-3">Plumbing Repair Dallas</h3>
+                    <p class="text-gray-600 text-sm sm:text-base">Leaks, fixtures, toilets, faucets, garbage disposals, and complete bathroom &amp; kitchen remodel plumbing.</p>
                 </div>
-          
-                <div class="service-card bg-white rounded-3xl p-8 shadow-sm border border-gray-100">
-                    <div class="w-14 h-14 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center text-3xl mb-6">🌊</div>
-                    <h3 class="text-2xl font-semibold mb-3">And Many More</h3>
-                    <p class="text-gray-600">Frozen pipes, gas lines, sump pumps, well pumps, re-piping, leak detection, water softeners &amp; more.</p>
+         
+                <div class="service-card bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-gray-100">
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center text-3xl mb-6">🌊</div>
+                    <h3 class="text-xl sm:text-2xl font-semibold mb-3">And Many More</h3>
+                    <p class="text-gray-600 text-sm sm:text-base">Frozen pipes, gas lines, sump pumps, well pumps, re-piping, leak detection, water softeners &amp; more.</p>
                 </div>
             </div>
-      
+     
             <div class="text-center mt-12">
-                <a href="tel:8442129477" class="inline-flex items-center gap-3 bg-blue-950 text-white text-xl font-semibold px-10 py-5 rounded-3xl hover:bg-orange-600 transition-all">
+                <a href="tel:8442129477" class="inline-flex items-center gap-3 bg-blue-950 text-white text-lg sm:text-xl font-semibold px-8 sm:px-10 py-5 rounded-3xl hover:bg-orange-600 transition-all">
                     <i class="fa-solid fa-phone"></i>
                     <span>GET A FREE ESTIMATE • (844) 212-9477</span>
                 </a>
@@ -197,14 +195,14 @@
     </section>
 
     <!-- Why Choose Us -->
-    <section id="whyus" class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid md:grid-cols-12 gap-16 items-center">
+    <section id="whyus" class="py-20 sm:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="grid md:grid-cols-12 gap-12 sm:gap-16 items-center">
                 <div class="md:col-span-5">
                     <span class="uppercase tracking-widest text-orange-600 font-semibold">WHY FAMILIES CHOOSE US</span>
-                    <h2 class="text-5xl heading-font font-bold text-blue-950 mt-4 leading-tight">Reliable Plumbing You Can Count On</h2>
+                    <h2 class="text-4xl sm:text-5xl heading-font font-bold text-blue-950 mt-4 leading-tight">Reliable Plumbing You Can Count On</h2>
                     <p class="mt-6 text-lg text-gray-600">We treat every home like our own. Professional, clean, and honest service guaranteed.</p>
-              
+             
                     <div class="mt-10 space-y-8">
                         <div class="flex gap-6">
                             <div class="flex-shrink-0 w-12 h-12 bg-orange-100 rounded-2xl flex items-center justify-center text-3xl">⚡</div>
@@ -229,7 +227,7 @@
                         </div>
                     </div>
                 </div>
-          
+         
                 <div class="md:col-span-7">
                     <img src="https://picsum.photos/id/201/800/600" alt="Professional plumber working on pipes in Georgia home"
                          class="rounded-3xl shadow-2xl w-full">
@@ -240,9 +238,9 @@
 
     <!-- Service Areas -->
     <section id="areas" class="py-20 bg-blue-950 text-white">
-        <div class="max-w-7xl mx-auto px-6 text-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center">
             <h2 class="text-4xl heading-font font-bold mb-6">Proudly Serving</h2>
-            <div class="flex flex-wrap justify-center gap-x-12 gap-y-6 text-lg">
+            <div class="flex flex-wrap justify-center gap-x-8 sm:gap-x-12 gap-y-6 text-base sm:text-lg">
                 <div class="flex items-center gap-3">
                     <i class="fa-solid fa-location-dot text-orange-400"></i>
                     <span>Georgia</span>
@@ -277,21 +275,21 @@
 
     <!-- Long-form Content -->
     <section class="py-20 bg-gray-50">
-        <div class="max-w-4xl mx-auto px-6 prose prose-lg">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 prose prose-lg">
             <h2 class="text-4xl heading-font font-bold text-center mb-12">Expert Emergency Plumber Georgia &amp; Dallas</h2>
-      
+     
             <p>When plumbing emergencies strike, every minute counts. Whether it's a <strong>burst pipe flooding your basement</strong> or a <strong>clogged sewer line backing up into your home</strong>, Local Plumbers is ready to help 24 hours a day, 7 days a week.</p>
-      
+     
             <h3 class="text-3xl font-semibold mt-16 mb-6">Drain Cleaning Georgia &amp; Dallas</h3>
             <p>Clogged drains are more than an inconvenience — they can lead to serious damage if left untreated. Our team uses advanced hydro jetting technology and professional-grade equipment to thoroughly clean your drains and restore proper flow.</p>
-      
+     
             <h3 class="text-3xl font-semibold mt-16 mb-6">Water Heater Repair Georgia &amp; Tankless Water Heater Installation Wylie</h3>
             <p>No hot water in the middle of winter? We repair and install both traditional tank and modern tankless water heaters. Our technicians are factory-trained on leading brands.</p>
-      
+     
             <h3 class="text-3xl font-semibold mt-16 mb-6">Sewer Line Replacement Georgia &amp; Wylie</h3>
             <p>Using the latest trenchless methods, we can replace damaged sewer lines with minimal disruption to your yard and landscaping.</p>
-      
-            <div class="my-16 bg-white p-10 rounded-3xl shadow">
+     
+            <div class="my-16 bg-white p-8 sm:p-10 rounded-3xl shadow">
                 <h4 class="font-semibold text-xl mb-4">Common Plumbing Problems We Solve Daily:</h4>
                 <ul class="grid grid-cols-1 md:grid-cols-2 gap-3 text-base">
                     <li class="flex items-start gap-2"><span class="text-emerald-500 mt-1">✔</span> Running toilets</li>
@@ -306,13 +304,13 @@
     </section>
 
     <!-- Final CTA -->
-    <section class="py-24 bg-gradient-to-r from-blue-900 to-orange-600 text-white">
-        <div class="max-w-4xl mx-auto text-center px-6">
-            <h2 class="text-5xl heading-font font-bold mb-6">Ready to Solve Your Plumbing Problem?</h2>
-            <p class="text-3xl mb-12">Call our local experts now for fast, friendly, and reliable service.</p>
+    <section class="py-20 sm:py-24 bg-gradient-to-r from-blue-900 to-orange-600 text-white">
+        <div class="max-w-4xl mx-auto text-center px-4 sm:px-6">
+            <h2 class="text-4xl sm:text-5xl heading-font font-bold mb-6">Ready to Solve Your Plumbing Problem?</h2>
+            <p class="text-2xl sm:text-3xl mb-12">Call our local experts now for fast, friendly, and reliable service.</p>
             <a href="tel:8442129477"
-               class="inline-flex items-center justify-center gap-4 bg-white text-blue-950 text-4xl font-bold px-16 py-8 rounded-3xl hover:scale-105 transition-transform shadow-2xl">
-                <i class="fa-solid fa-phone-volume text-5xl"></i>
+               class="inline-flex items-center justify-center gap-4 bg-white text-blue-950 text-3xl sm:text-4xl font-bold px-12 sm:px-16 py-6 sm:py-8 rounded-3xl hover:scale-105 transition-transform shadow-2xl">
+                <i class="fa-solid fa-phone-volume text-4xl"></i>
                 (844) 212-9477
             </a>
             <p class="mt-8 text-lg opacity-90">Available 24/7 • No overtime charges for nights &amp; weekends</p>
@@ -321,9 +319,9 @@
 
     <!-- FAQ -->
     <section class="py-20 bg-gray-50">
-        <div class="max-w-3xl mx-auto px-6">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6">
             <h2 class="text-4xl heading-font font-bold text-center mb-12">Frequently Asked Questions</h2>
-      
+     
             <div class="space-y-8">
                 <details class="group">
                     <summary class="flex justify-between items-center cursor-pointer font-medium text-xl">
@@ -332,7 +330,7 @@
                     </summary>
                     <p class="mt-4 text-gray-600">Yes. We provide true 24/7 emergency plumbing service throughout Georgia and the Dallas area including Wylie.</p>
                 </details>
-          
+         
                 <details class="group">
                     <summary class="flex justify-between items-center cursor-pointer font-medium text-xl">
                         How quickly can you arrive?
@@ -340,7 +338,7 @@
                     </summary>
                     <p class="mt-4 text-gray-600">We aim to have a technician at your door within 30-90 minutes depending on your location.</p>
                 </details>
-          
+         
                 <details class="group">
                     <summary class="flex justify-between items-center cursor-pointer font-medium text-xl">
                         Are your plumbers licensed?
@@ -354,7 +352,7 @@
 
     <!-- Footer -->
     <footer class="bg-blue-950 text-white pt-16 pb-8">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 grid md:grid-cols-4 gap-10">
             <div>
                 <div class="flex items-center gap-3 mb-6">
                     <div class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-blue-950 text-3xl font-bold">LP</div>
@@ -362,7 +360,7 @@
                 </div>
                 <p class="text-gray-400">Trusted plumbing professionals serving Georgia and the greater Dallas area since 1994.</p>
             </div>
-      
+     
             <div>
                 <h4 class="font-semibold text-lg mb-6">Quick Links</h4>
                 <ul class="space-y-3 text-gray-400">
@@ -372,7 +370,7 @@
                     <li><a href="#" class="hover:text-white">Sewer Line Replacement</a></li>
                 </ul>
             </div>
-      
+     
             <div>
                 <h4 class="font-semibold text-lg mb-6">Service Areas</h4>
                 <ul class="space-y-3 text-gray-400">
@@ -383,7 +381,7 @@
                     <li>Rowlett &amp; Sachse</li>
                 </ul>
             </div>
-      
+     
             <div>
                 <h4 class="font-semibold text-lg mb-6">Contact Us</h4>
                 <a href="tel:8442129477" class="block text-3xl font-bold hover:text-orange-400 transition-colors">(844) 212-9477</a>
@@ -391,7 +389,7 @@
             </div>
         </div>
         <!-- Disclaimer -->
-        <div class="max-w-7xl mx-auto px-6 pt-12 border-t border-white/20 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 pt-12 border-t border-white/20 mt-12">
             <p class="text-xs text-gray-400 leading-relaxed text-center">
                 <strong>Disclaimer:</strong> This site is a free service to assist homeowners in connecting with local service providers. All contractors/providers are independent and this site does not warrant or guarantee any work performed. It is the responsibility of the homeowner to verify that the hired contractor furnishes the necessary license and insurance required for the work being performed. All persons depicted in a photo or video are actors or models and not contractors listed on this site.
             </p>
@@ -401,7 +399,7 @@
 
     <script>
         console.log('%c✅ Local Plumbers Landing Page Loaded Successfully!', 'color: #f97316; font-size: 16px; font-weight: bold');
-  
+ 
         // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
