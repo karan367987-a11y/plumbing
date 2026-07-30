@@ -65,6 +65,18 @@ mcc('requestTrackingNumber', {campaign:"347627",selector:[{type:"dom",value:"a[h
                 line-height: 1.05;
             }
         }
+
+        /* Footer link hover */
+        .footer-link {
+            transition: color 0.2s ease;
+        }
+        .footer-link:hover {
+            color: #f97316;
+        }
+        /* anchor offset for fixed header */
+        .anchor-offset {
+            scroll-margin-top: 80px;
+        }
     </style>
 </head>
 <body class="tail-container text-gray-800">
@@ -89,7 +101,7 @@ mcc('requestTrackingNumber', {campaign:"347627",selector:[{type:"dom",value:"a[h
         </div>
     </header>
     <!-- Hero Section -->
-    <section class="hero-bg min-h-screen flex items-center text-white relative">
+    <section class="hero-bg min-h-screen flex items-center text-white relative" id="home">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-20">
             <div class="hero-content max-w-3xl lg:max-w-4xl">
                 <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm mb-6">
@@ -159,7 +171,7 @@ mcc('requestTrackingNumber', {campaign:"347627",selector:[{type:"dom",value:"a[h
         </div>
     </div>
     <!-- Services Section -->
-    <section id="services" class="py-20 sm:py-24 bg-gray-50">
+    <section id="services" class="py-20 sm:py-24 bg-gray-50 anchor-offset">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <div class="text-center mb-12 sm:mb-16">
                 <span class="text-orange-600 font-semibold tracking-widest">WHAT WE DO BEST</span>
@@ -212,8 +224,8 @@ mcc('requestTrackingNumber', {campaign:"347627",selector:[{type:"dom",value:"a[h
             </div>
         </div>
     </section>
-    <!-- Why Choose Us -->
-    <section id="whyus" class="py-20 sm:py-24 bg-white">
+    <!-- Why Choose Us (About) -->
+    <section id="about" class="py-20 sm:py-24 bg-white anchor-offset">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <div class="grid md:grid-cols-12 gap-12 sm:gap-16 items-center">
                 <div class="md:col-span-5">
@@ -357,7 +369,7 @@ mcc('requestTrackingNumber', {campaign:"347627",selector:[{type:"dom",value:"a[h
         </div>
     </section>
     <!-- FAQ -->
-    <section class="py-20 bg-gray-50">
+    <section class="py-20 bg-gray-50" id="faq">
         <div class="max-w-3xl mx-auto px-4 sm:px-6">
             <h2 class="text-4xl heading-font font-bold text-center mb-12">Frequently Asked Questions</h2>
             <div class="space-y-8">
@@ -401,63 +413,102 @@ mcc('requestTrackingNumber', {campaign:"347627",selector:[{type:"dom",value:"a[h
             </div>
         </div>
     </section>
-    <!-- Footer -->
+    <!-- ===== ENHANCED RESPONSIVE FOOTER with Home, About, Contact, Terms, Privacy ===== -->
     <footer class="bg-blue-950 text-white pt-16 pb-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 grid md:grid-cols-4 gap-10">
-            <div>
-                <div class="flex items-center gap-3 mb-6">
-                    <div class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-blue-950 text-3xl font-bold">LP</div>
-                    <div class="text-3xl heading-font font-bold">Local Plumbers</div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <!-- Footer Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
+                <!-- Brand Column -->
+                <div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-blue-950 text-3xl font-bold">LP</div>
+                        <div class="text-3xl heading-font font-bold">Local Plumbers</div>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">Trusted Emergency Plumber Dallas serving the greater Dallas area with fast, reliable plumbing solutions.</p>
+                    <div class="mt-6 flex gap-4">
+                        <a href="#" aria-label="Facebook" class="text-gray-400 hover:text-orange-500 transition-colors text-xl"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter" class="text-gray-400 hover:text-orange-500 transition-colors text-xl"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram" class="text-gray-400 hover:text-orange-500 transition-colors text-xl"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube" class="text-gray-400 hover:text-orange-500 transition-colors text-xl"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
                 </div>
-                <p class="text-gray-400">Trusted Emergency Plumber Dallas serving the greater Dallas area with fast, reliable plumbing solutions.</p>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-semibold text-lg mb-6 text-white">Quick Links</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><a href="#home" class="footer-link">Home</a></li>
+                        <li><a href="#about" class="footer-link">About Us</a></li>
+                        <li><a href="#services" class="footer-link">Services</a></li>
+                        <li><a href="#contact" class="footer-link">Contact</a></li>
+                        <li><a href="#faq" class="footer-link">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services Links -->
+                <div>
+                    <h4 class="font-semibold text-lg mb-6 text-white">Our Services</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><a href="#services" class="footer-link">Emergency Plumber Dallas</a></li>
+                        <li><a href="#services" class="footer-link">Drain Cleaning Dallas</a></li>
+                        <li><a href="#services" class="footer-link">Water Heater Repair Dallas</a></li>
+                        <li><a href="#services" class="footer-link">Sewer Line Repair Dallas</a></li>
+                        <li><a href="#services" class="footer-link">Leak Detection Dallas</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact & Legal -->
+                <div>
+                    <h4 class="font-semibold text-lg mb-6 text-white">Contact &amp; Legal</h4>
+                    <div id="contact" class="anchor-offset">
+                        <a href="tel:+18442129477" class="block text-2xl font-bold text-orange-400 hover:text-orange-300 transition-colors">(844) 212-9477</a>
+                        <p class="text-gray-400 mt-2 text-sm">Available 24/7</p>
+                        <p class="text-gray-400 mt-3 text-sm"><i class="fa-solid fa-location-dot text-orange-400 mr-2"></i>Dallas, TX &amp; Surrounding Areas</p>
+                    </div>
+                    <div class="mt-6 pt-6 border-t border-white/10">
+                        <h5 class="font-semibold text-sm mb-3 text-gray-300">Legal</h5>
+                        <ul class="space-y-2 text-sm text-gray-400">
+                            <li><a href="#terms" class="footer-link">Terms &amp; Conditions</a></li>
+                            <li><a href="#privacy" class="footer-link">Privacy Policy</a></li>
+                            <li><a href="#disclaimer" class="footer-link">Disclaimer</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div>
-                <h4 class="font-semibold text-lg mb-6">Quick Links</h4>
-                <ul class="space-y-3 text-gray-400">
-                    <li><a href="#" class="hover:text-white">Emergency Plumber Dallas</a></li>
-                    <li><a href="#" class="hover:text-white">Drain Cleaning Dallas</a></li>
-                    <li><a href="#" class="hover:text-white">Water Heater Repair Dallas</a></li>
-                    <li><a href="#" class="hover:text-white">Sewer Line Repair Dallas</a></li>
-                </ul>
+            
+            <!-- Bottom Bar with Disclaimer -->
+            <div class="pt-8 mt-10 border-t border-white/10">
+                <p class="text-xs text-gray-400 leading-relaxed text-center">
+                    <strong id="disclaimer">Disclaimer:</strong> This site is a free service to assist homeowners in connecting with local service providers. All contractors/providers are independent and this site does not warrant or guarantee any work performed. It is the responsibility of the homeowner to verify that the hired contractor furnishes the necessary license and insurance required for the work being performed. All persons depicted in a photo or video are actors or models and not contractors listed on this site.
+                </p>
+                <p class="text-xs text-gray-400 leading-relaxed text-center mt-4">
+                    Same-day and 24/7 emergency services are subject to provider participation, location, technician availability, and demand. Availability is not guaranteed and may vary by market and appointment capacity.
+                </p>
+                <p class="text-center text-xs text-gray-500 mt-6">© 2026 Local Plumbers. All Rights Reserved.</p>
             </div>
-            <div>
-                <h4 class="font-semibold text-lg mb-6">Service Areas</h4>
-                <ul class="space-y-3 text-gray-400">
-                    <li>Dallas, TX</li>
-                    <li>Wylie, TX</li>
-                    <li>Rockwall County</li>
-                    <li>Rowlett &amp; Sachse</li>
-                    <li>Garland &amp; Mesquite</li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="font-semibold text-lg mb-6">Contact Us</h4>
-                <a href="tel:+18442129477" class="block text-3xl font-bold hover:text-orange-400 transition-colors">(844) 212-9477</a>
-                <p class="text-gray-400 mt-6">Available 24/7</p>
-            </div>
-        </div>
-        <!-- Disclaimer -->
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 pt-12 border-t border-white/20 mt-12">
-            <p class="text-xs text-gray-400 leading-relaxed text-center">
-                <strong>Disclaimer:</strong> This site is a free service to assist homeowners in connecting with local service providers. All contractors/providers are independent and this site does not warrant or guarantee any work performed. It is the responsibility of the homeowner to verify that the hired contractor furnishes the necessary license and insurance required for the work being performed. All persons depicted in a photo or video are actors or models and not contractors listed on this site.
-            </p>
-            <p class="text-xs text-gray-400 leading-relaxed text-center mt-4">
-                Same-day and 24/7 emergency services are subject to provider participation, location, technician availability, and demand. Availability is not guaranteed and may vary by market and appointment capacity.
-            </p>
-            <p class="text-center text-xs text-gray-500 mt-6">© 2026 Local Plumbers. All Rights Reserved.</p>
+            
+            <!-- Hidden anchor targets for internal links -->
+            <div style="display:none;" id="terms"></div>
+            <div style="display:none;" id="privacy"></div>
+            <div style="display:none;" id="contact"></div>
         </div>
     </footer>
+    
     <script>
         console.log('%c✅ Emergency Plumber Dallas Landing Page Loaded Successfully!', 'color: #f97316; font-size: 16px; font-weight: bold');
         // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
-                if (this.getAttribute('href') !== '#') {
+                const href = this.getAttribute('href');
+                if (href !== '#' && href !== '#home' && href !== '#about' && href !== '#services' && href !== '#contact' && href !== '#faq' && href !== '#terms' && href !== '#privacy' && href !== '#disclaimer') {
                     e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
+                    const target = document.querySelector(href);
                     if (target) {
                         target.scrollIntoView({ behavior: 'smooth' });
                     }
+                } else if (href === '#home') {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
                 }
             });
         });
