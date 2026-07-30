@@ -377,18 +377,80 @@
       box-shadow: 0 10px 30px rgba(255, 98, 0, 0.4);
     }
 
-    /* footer */
+    /* ----- FOOTER (enhanced, responsive with multiple columns) ----- */
     footer {
       background: #0b1a2b;
       color: #a0b3c9;
       padding: 60px 0 30px;
-      text-align: center;
-      font-size: 0.95rem;
     }
-    footer .disclaimer {
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+      text-align: left;
+    }
+
+    .footer-grid h4 {
+      color: #ffffff;
+      font-size: 1.1rem;
+      margin-bottom: 18px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+
+    .footer-grid p, .footer-grid a {
+      color: #a0b3c9;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+      transition: 0.2s;
+    }
+
+    .footer-grid a:hover {
+      color: #ffffff;
+    }
+
+    .footer-brand .logo-footer {
+      display: flex;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+    .footer-brand .logo-footer .lp {
+      background: #003087;
+      color: white;
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      margin-right: 12px;
+      font-size: 22px;
+      font-weight: 700;
+    }
+    .footer-brand .logo-footer span {
+      font-size: 24px;
+      font-weight: 700;
+      color: white;
+    }
+    .footer-brand p {
+      max-width: 340px;
+      line-height: 1.7;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #1e2d44;
+      padding-top: 30px;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+    .footer-bottom .disclaimer {
       max-width: 1000px;
-      margin: 20px auto 0;
-      font-size: 0.85rem;
+      margin: 12px auto 0;
+      font-size: 0.8rem;
       opacity: 0.7;
       line-height: 1.7;
     }
@@ -424,6 +486,20 @@
       .section-title { font-size: 2rem; }
       .logo span { display: block; margin-left: 0; }
       .final-cta h2 { font-size: 2.2rem; }
+      
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+      }
+      .footer-brand p {
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .footer-brand .logo-footer {
+        justify-content: center;
+      }
     }
   </style>
 </head>
@@ -431,7 +507,7 @@
   <!-- HEADER -->
   <header>
     <div class="container header-content">
-      <a href="/" class="logo">
+      <a href="#home" class="logo">
         <div class="lp">LP</div>
         Local Plumbers
         <span>Dallas • Wylie • Georgia</span>
@@ -442,8 +518,8 @@
     </div>
   </header>
 
-  <!-- HERO -->
-  <section class="hero">
+  <!-- HERO (home) -->
+  <section class="hero" id="home">
     <div class="container">
       <div class="emergency-badge">
         <span>●</span> 24/7 EMERGENCY SERVICE
@@ -660,13 +736,57 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
+  <!-- ===== ENHANCED FOOTER with Home, About, Contact, Terms, Privacy ===== -->
   <footer>
     <div class="container">
-      <p>© 2026 Local Plumbers. All Rights Reserved.</p>
-      <div class="disclaimer">
-        <p>Disclaimer: This site is a free service to assist homeowners in connecting with local service providers. All contractors/providers are independent and this site does not warrant or guarantee any work performed. It is the responsibility of the homeowner to verify that the hired contractor furnishes the necessary license and insurance required for the work being performed. All persons depicted in a photo or video are actors or models and not contractors listed on this site.</p>
-        <p style="margin-top: 12px;">Same-day and 24/7 emergency services are subject to provider participation, location, technician availability, and demand. Availability is not guaranteed and may vary by market and appointment capacity.</p>
+      <div class="footer-grid">
+        <!-- Brand -->
+        <div class="footer-brand">
+          <div class="logo-footer">
+            <div class="lp">LP</div>
+            <span>Local Plumbers</span>
+          </div>
+          <p>Your trusted 24/7 emergency plumbing partner in Dallas, TX. Licensed, insured, and committed to quality service.</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4>Quick Links</h4>
+          <a href="#home">Home</a>
+          <a href="#services">Services</a>
+          <a href="#intro">About Us</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <!-- Legal -->
+        <div>
+          <h4>Legal</h4>
+          <a href="#terms">Terms &amp; Conditions</a>
+          <a href="#privacy">Privacy Policy</a>
+          <a href="#disclaimer">Disclaimer</a>
+        </div>
+
+        <!-- Contact Info -->
+        <div id="contact">
+          <h4>Contact Us</h4>
+          <p>📞 <a href="tel:8442129477" style="display:inline; color:#a0b3c9;">(844) 212-9477</a></p>
+          <p>📍 Dallas, TX &amp; Surrounding Areas</p>
+          <p>⏰ 24/7 Emergency Service</p>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="footer-bottom">
+        <p>© 2026 Local Plumbers. All Rights Reserved.</p>
+        <div class="disclaimer">
+          <p id="disclaimer">Disclaimer: This site is a free service to assist homeowners in connecting with local service providers. All contractors/providers are independent and this site does not warrant or guarantee any work performed. It is the responsibility of the homeowner to verify that the hired contractor furnishes the necessary license and insurance required for the work being performed. All persons depicted in a photo or video are actors or models and not contractors listed on this site.</p>
+          <p style="margin-top: 8px;">Same-day and 24/7 emergency services are subject to provider participation, location, technician availability, and demand. Availability is not guaranteed and may vary by market and appointment capacity.</p>
+        </div>
+        <!-- hidden anchor targets for internal links -->
+        <div style="display:none;" id="terms"></div>
+        <div style="display:none;" id="privacy"></div>
+        <div style="display:none;" id="contact"></div>
+        <div style="display:none;" id="about"></div>
       </div>
     </div>
   </footer>
