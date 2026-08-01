@@ -248,21 +248,57 @@
     }
     .cta-banner h2 { font-size: 2.8rem; font-family: 'Playfair Display', serif; }
 
-    /* Footer – simplified */
+    /* Footer – full as per screenshot */
     .footer {
       background: #0a2540;
       color: #cbd5e1;
-      padding: 2rem 0 1.5rem;
+      padding: 3rem 0 1.5rem;
     }
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 1.5rem;
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2.5rem;
     }
-    .footer a { color: #94a3b8; transition: 0.2s; }
+    .footer h4 {
+      color: #fff;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+    .footer a { color: #94a3b8; transition: 0.2s; display: inline-block; margin-bottom: 0.3rem; }
     .footer a:hover { color: #f97316; }
-    .footer-bottom { border-top: 1px solid #1e3a5f; padding-top: 1.5rem; margin-top: 1.5rem; text-align: center; font-size: 0.85rem; }
+    .footer ul { list-style: none; }
+    .footer ul li { margin-bottom: 0.3rem; }
+    .footer .phone-large {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #f97316;
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+    .footer .legal-list li { margin-bottom: 0.2rem; }
+    .footer-bottom {
+      border-top: 1px solid #1e3a5f;
+      padding-top: 1.8rem;
+      margin-top: 2.5rem;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #94a3b8;
+    }
+    .footer-bottom .disclaimer {
+      font-size: 0.7rem;
+      color: #64748b;
+      max-width: 900px;
+      margin: 0.5rem auto 0;
+      line-height: 1.5;
+    }
+    .footer-social a {
+      color: #94a3b8;
+      margin-right: 1rem;
+      font-size: 1.2rem;
+      transition: 0.2s;
+    }
+    .footer-social a:hover { color: #f97316; }
 
     /* responsive */
     @media (max-width: 900px) {
@@ -473,16 +509,72 @@
   </div>
 </section>
 
-<!-- SIMPLIFIED FOOTER -->
+<!-- FULL FOOTER as per screenshot -->
 <footer class="footer">
   <div class="container">
-    <div class="footer-inner">
-      <div><strong style="color:#fff;">Local Plumbers</strong><br><span style="color:#94a3b8; font-size:0.9rem;">Emergency Plumber Dallas • 24/7 Service</span></div>
-      <div><a href="tel:+18442129477" style="font-size:1.2rem; color:#f97316;">(844) 212-9477</a><br><span style="color:#94a3b8;">Available 24/7</span></div>
+    <div class="footer-grid">
+      <!-- Brand Column -->
+      <div>
+        <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.8rem;">
+          <div style="background:#fff; color:#0a2540; width:40px; height:40px; border-radius:12px; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:1.4rem;">LP</div>
+          <span style="font-size:1.6rem; font-weight:700; color:#fff;">Local <span style="color:#ea580c;">Plumbers</span></span>
+        </div>
+        <p style="color:#94a3b8; font-size:0.9rem; max-width:240px;">Trusted Emergency Plumber Dallas serving the greater Dallas area with fast, reliable plumbing solutions.</p>
+        <div class="footer-social" style="margin-top:1rem;">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+
+      <!-- Our Services -->
+      <div>
+        <h4>Our Services</h4>
+        <ul>
+          <li><a href="#">Emergency Plumber Dallas</a></li>
+          <li><a href="#">Drain Cleaning Dallas</a></li>
+          <li><a href="#">Water Heater Repair Dallas</a></li>
+          <li><a href="#">Sewer Line Repair Dallas</a></li>
+          <li><a href="#">Leak Detection Dallas</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact & Legal -->
+      <div>
+        <h4>Contact &amp; Legal</h4>
+        <a href="tel:+18442129477" class="phone-large">(844) 212-9477</a>
+        <span style="color:#94a3b8; display:block; margin-bottom:0.5rem;">Available 24/7</span>
+        <p style="color:#94a3b8; font-size:0.9rem;"><i class="fas fa-location-dot" style="color:#ea580c; margin-right:0.3rem;"></i> Dallas, TX &amp; Surrounding Areas</p>
+        <div style="margin-top:1rem; border-top:1px solid #1e3a5f; padding-top:1rem;">
+          <h5 style="color:#94a3b8; font-size:0.85rem; font-weight:600; margin-bottom:0.5rem;">Legal</h5>
+          <ul class="legal-list">
+            <li><a href="#">Terms &amp; Conditions</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Disclaimer</a></li>
+          </ul>
+        </div>
+      </div>
     </div>
+
+    <!-- Bottom Bar with full disclaimer -->
     <div class="footer-bottom">
-      <p>© 2026 Local Plumbers. All rights reserved.</p>
-      <p style="font-size:0.75rem; color:#64748b; margin-top:0.3rem;">Disclaimer: This site connects homeowners with licensed providers. Verify credentials independently.</p>
+      <p style="font-weight:500; color:#cbd5e1;">Disclaimer:</p>
+      <p class="disclaimer">This site is a free service to assist homeowners in connecting with local service providers. All contractors/providers are independent and this site does not warrant or guarantee any work performed. It is the responsibility of the homeowner to verify that the hired contractor furnishes the necessary license and insurance required for the work being performed. All persons depicted in a photo or video are actors or models and not contractors listed on this site.</p>
+      <p class="disclaimer" style="margin-top:0.5rem;">Same-day and 24/7 emergency services are subject to provider participation, location, technician availability, and demand. Availability is not guaranteed and may vary by market and appointment capacity.</p>
+      <p style="margin-top:1.2rem; color:#94a3b8;">© 2026 Local Plumbers. All Rights Reserved.</p>
     </div>
   </div>
 </footer>
