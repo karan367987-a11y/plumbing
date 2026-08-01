@@ -118,49 +118,81 @@
     }
     .header-phone i { color: #ea580c; }
 
-    /* Hero */
+    /* Hero — banner image removed, text-only layout */
     .hero {
       background: linear-gradient(135deg, #0a2540 0%, #1a3a5c 100%);
       color: #fff;
-      padding: 4rem 0 5rem;
+      padding: 5rem 0 6rem;
       position: relative;
     }
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      align-items: center;
+    .hero-content {
+      max-width: 820px;
+      margin: 0 auto;
+      text-align: center;
     }
-    .hero h1 {
-      font-size: 3.4rem;
-      line-height: 1.1;
+    .hero .emergency-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255,255,255,0.12);
+      backdrop-filter: blur(4px);
+      padding: 0.4rem 1.2rem;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
       margin-bottom: 1.5rem;
     }
+    .hero .emergency-tag .dot {
+      width: 10px;
+      height: 10px;
+      background: #34d399;
+      border-radius: 50%;
+      display: inline-block;
+      animation: pulse-dot 1.5s infinite;
+    }
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.2); }
+    }
+    .hero h1 {
+      font-size: 4rem;
+      line-height: 1.05;
+      margin-bottom: 1.2rem;
+      font-family: 'Playfair Display', serif;
+    }
     .hero h1 span { color: #f97316; }
-    .hero p { font-size: 1.2rem; opacity: 0.9; max-width: 550px; margin-bottom: 2rem; }
-    .hero-badges {
+    .hero p {
+      font-size: 1.3rem;
+      opacity: 0.9;
+      max-width: 650px;
+      margin: 0 auto 2.2rem;
+    }
+    .hero .cta-group {
       display: flex;
       flex-wrap: wrap;
-      gap: 1.5rem;
-      margin-top: 2rem;
+      justify-content: center;
+      gap: 1rem;
     }
-    .badge {
+    .hero .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.2rem;
+      margin-top: 2.5rem;
+    }
+    .hero .badge {
       display: flex;
       align-items: center;
       gap: 0.5rem;
       background: rgba(255,255,255,0.08);
-      padding: 0.4rem 1rem;
+      padding: 0.4rem 1.2rem;
       border-radius: 40px;
       font-size: 0.9rem;
       backdrop-filter: blur(4px);
     }
-    .badge i { color: #f97316; }
-    .hero-image {
-      background: url('https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=800&auto=format&fit=crop') center/cover;
-      border-radius: 32px;
-      min-height: 320px;
-      box-shadow: 0 30px 40px -20px rgba(0,0,0,0.6);
-    }
+    .hero .badge i { color: #f97316; }
 
     /* Trust bar */
     .trust-bar {
@@ -248,7 +280,7 @@
     }
     .cta-banner h2 { font-size: 2.8rem; font-family: 'Playfair Display', serif; }
 
-    /* Footer – full as per screenshot */
+    /* Footer – full */
     .footer {
       background: #0a2540;
       color: #cbd5e1;
@@ -302,13 +334,12 @@
 
     /* responsive */
     @media (max-width: 900px) {
-      .hero-grid { grid-template-columns: 1fr; }
-      .hero h1 { font-size: 2.6rem; }
-      .hero-image { min-height: 220px; }
-      .header-inner { flex-wrap: wrap; gap: 0.5rem; }
+      .hero h1 { font-size: 2.8rem; }
+      .hero { padding: 3.5rem 0 4rem; }
     }
     @media (max-width: 600px) {
       .hero h1 { font-size: 2rem; }
+      .hero p { font-size: 1rem; }
       .btn-cta { font-size: 1rem; padding: 0.7rem 1.6rem; }
       .section-title { font-size: 2rem; }
     }
@@ -347,24 +378,24 @@
   </div>
 </header>
 
-<!-- HERO -->
+<!-- HERO — banner image removed, text-centered layout -->
 <section class="hero">
-  <div class="container hero-grid">
-    <div>
-      <h1>Emergency Plumbing <span>Dallas</span> – 24/7 Rapid Response</h1>
-      <p>Burst pipes, clogged drains, water heater failure? Our licensed emergency plumbers arrive fast to protect your home.</p>
-      <div style="display:flex; flex-wrap:wrap; gap:1rem;">
-        <a href="tel:+18442129477" class="btn-cta"><i class="fas fa-phone-volume"></i> Call Now</a>
-        <a href="#services" class="btn-outline"><i class="fas fa-tools"></i> View Services</a>
-      </div>
-      <div class="hero-badges">
-        <span class="badge"><i class="fas fa-clock"></i> 24/7 Available</span>
-        <span class="badge"><i class="fas fa-shield-alt"></i> Licensed & Insured</span>
-        <span class="badge"><i class="fas fa-truck-fast"></i> 30-60 Min Response</span>
-        <span class="badge"><i class="fas fa-map-pin"></i> Dallas & Metro</span>
-      </div>
+  <div class="container hero-content">
+    <div class="emergency-tag">
+      <span class="dot"></span> EMERGENCY SERVICE AVAILABLE 24/7
     </div>
-    <div class="hero-image" role="img" aria-label="Emergency plumber fixing pipe"></div>
+    <h1>Emergency Plumber Dallas <br><span>You Can Trust 24/7</span></h1>
+    <p>Fast response for burst pipes, drain clogs, water heater failures &amp; sewer emergencies. Same-day Emergency Plumbing Dallas.</p>
+    <div class="cta-group">
+      <a href="tel:+18442129477" class="btn-cta"><i class="fas fa-phone-volume"></i> CALL NOW: (844) 212-9477</a>
+      <a href="#services" class="btn-outline"><i class="fas fa-tools"></i> Get Same-Day Service</a>
+    </div>
+    <div class="hero-badges">
+      <span class="badge"><i class="fas fa-clock"></i> 24/7 Available</span>
+      <span class="badge"><i class="fas fa-shield-alt"></i> Licensed & Insured</span>
+      <span class="badge"><i class="fas fa-truck-fast"></i> 30-60 Min Response</span>
+      <span class="badge"><i class="fas fa-map-pin"></i> Dallas & Metro</span>
+    </div>
   </div>
 </section>
 
@@ -509,7 +540,7 @@
   </div>
 </section>
 
-<!-- FULL FOOTER as per screenshot -->
+<!-- FULL FOOTER -->
 <footer class="footer">
   <div class="container">
     <div class="footer-grid">
@@ -569,7 +600,7 @@
       </div>
     </div>
 
-    <!-- Bottom Bar with full disclaimer -->
+    <!-- Bottom Bar -->
     <div class="footer-bottom">
       <p style="font-weight:500; color:#cbd5e1;">Disclaimer:</p>
       <p class="disclaimer">This site is a free service to assist homeowners in connecting with local service providers. All contractors/providers are independent and this site does not warrant or guarantee any work performed. It is the responsibility of the homeowner to verify that the hired contractor furnishes the necessary license and insurance required for the work being performed. All persons depicted in a photo or video are actors or models and not contractors listed on this site.</p>
@@ -583,21 +614,19 @@
 <a href="tel:+18442129477" class="sticky-phone"><i class="fas fa-phone-alt"></i> Call Now</a>
 
 <script>
-  // FAQ toggle
   function toggleFAQ(el) {
     const item = el.parentElement;
     const open = item.classList.contains('open');
     document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
     if (!open) item.classList.add('open');
   }
-  // open first FAQ by default
   document.addEventListener('DOMContentLoaded', function() {
     const first = document.querySelector('.faq-item');
     if (first) first.classList.add('open');
   });
 </script>
 
-<!-- Schema: LocalBusiness + FAQ -->
+<!-- Schema -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -606,8 +635,7 @@
   "description": "Emergency Plumbing Dallas TX, 24/7 burst pipe repair, drain cleaning, water heater, sewer.",
   "telephone": "+18442129477",
   "areaServed": "Dallas, Texas",
-  "priceRange": "$$",
-  "image": "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=800&auto=format&fit=crop"
+  "priceRange": "$$"
 }
 </script>
 <script type="application/ld+json">
