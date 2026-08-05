@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us – Local Plumbers Dallas | 24/7 Emergency Plumbing</title>
+  <meta name="description" content="Contact Local Plumbers in Dallas for 24/7 emergency plumbing services. Call us, email, or visit our location. Fast response guaranteed." />
+  <link rel="canonical" href="https://www.localplumbers.online/contact" />
+  <!-- Font & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    /* Reset & base */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f9fafb;
+      color: #1f2937;
+      line-height: 1.6;
+    }
+    a { text-decoration: none; color: inherit; }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    .heading-font { font-family: 'Playfair Display', serif; }
+
+    /* Buttons & CTA */
+    .btn-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: #ea580c;
+      color: #fff;
+      padding: 0.9rem 2.2rem;
+      border-radius: 60px;
+      font-weight: 700;
+      font-size: 1.2rem;
+      border: none;
+      cursor: pointer;
+      transition: 0.2s ease;
+      box-shadow: 0 10px 20px -8px rgba(234, 88, 12, 0.4);
+    }
+    .btn-cta:hover { background: #c2410c; transform: scale(1.02); }
+    .btn-submit {
+      background: #ea580c;
+      color: #fff;
+      padding: 0.9rem 2.5rem;
+      border-radius: 60px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      border: none;
+      cursor: pointer;
+      transition: 0.2s ease;
+      box-shadow: 0 10px 20px -8px rgba(234, 88, 12, 0.3);
+    }
+    .btn-submit:hover { background: #c2410c; transform: scale(1.02); }
+
+    /* Header */
+    .header {
+      background: #fff;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      padding: 0.8rem 0;
+      border-bottom: 3px solid #ea580c;
+    }
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .logo-icon {
+      background: #0a2540;
+      color: #fff;
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+    .logo-text {
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+    .logo-text span { color: #ea580c; }
+    .tagline {
+      font-size: 0.7rem;
+      color: #4b5563;
+      letter-spacing: 0.3px;
+      margin-top: -2px;
+    }
+    .header-phone {
+      background: #0a2540;
+      color: #fff;
+      padding: 0.6rem 1.6rem;
+      border-radius: 40px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .header-phone i { color: #ea580c; }
+
+    /* Hero - Contact page */
+    .hero {
+      background: linear-gradient(135deg, #0a2540 0%, #1a3a5c 100%);
+      color: #fff;
+      padding: 4rem 0 5rem;
+      position: relative;
+    }
+    .hero-content {
+      max-width: 820px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 3.8rem;
+      line-height: 1.05;
+      margin-bottom: 1.2rem;
+      font-family: 'Playfair Display', serif;
+    }
+    .hero h1 span { color: #f97316; }
+    .hero p {
+      font-size: 1.3rem;
+      opacity: 0.9;
+      max-width: 650px;
+      margin: 0 auto 1.8rem;
+    }
+
+    /* sections */
+    section { padding: 4rem 0; }
+    .section-title {
+      font-size: 2.6rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      font-family: 'Playfair Display', serif;
+    }
+    .section-sub { color: #4b5563; max-width: 700px; margin-bottom: 2.5rem; }
+
+    /* Contact Grid */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+    .contact-info-card {
+      background: #fff;
+      padding: 2.5rem;
+      border-radius: 32px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.02);
+      border: 1px solid #f0f0f0;
+    }
+    .contact-info-card h3 {
+      font-size: 1.6rem;
+      margin-bottom: 1.5rem;
+      font-family: 'Playfair Display', serif;
+    }
+    .contact-info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1.8rem;
+    }
+    .contact-info-item i {
+      font-size: 1.5rem;
+      color: #ea580c;
+      width: 2.5rem;
+      margin-top: 0.2rem;
+    }
+    .contact-info-item .label { font-weight: 600; display: block; }
+    .contact-info-item .value { color: #4b5563; }
+
+    /* Contact Form */
+    .contact-form {
+      background: #fff;
+      padding: 2.5rem;
+      border-radius: 32px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.02);
+      border: 1px solid #f0f0f0;
+    }
+    .contact-form h3 {
+      font-size: 1.6rem;
+      margin-bottom: 1.5rem;
+      font-family: 'Playfair Display', serif;
+    }
+    .form-group {
+      margin-bottom: 1.2rem;
+    }
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      font-size: 0.9rem;
+    }
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 0.9rem 1.2rem;
+      border: 2px solid #e5e7eb;
+      border-radius: 16px;
+      font-size: 1rem;
+      font-family: 'Inter', sans-serif;
+      transition: 0.2s;
+      background: #f9fafb;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: #ea580c;
+      background: #fff;
+    }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+
+    /* Map */
+    .map-container {
+      border-radius: 32px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+      border: 1px solid #f0f0f0;
+    }
+    .map-container iframe {
+      width: 100%;
+      height: 400px;
+      border: 0;
+      display: block;
+    }
+
+    /* CTA banner */
+    .cta-banner {
+      background: linear-gradient(145deg, #0a2540, #1f4a6e);
+      color: #fff;
+      padding: 4rem 2rem;
+      border-radius: 60px;
+      text-align: center;
+    }
+    .cta-banner h2 { font-size: 2.8rem; font-family: 'Playfair Display', serif; }
+
+    /* Footer – full (matches your existing) */
+    .footer {
+      background: #0a2540;
+      color: #cbd5e1;
+      padding: 3rem 0 1.5rem;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2.5rem;
+    }
+    .footer h4 {
+      color: #fff;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+    .footer a { color: #94a3b8; transition: 0.2s; display: inline-block; margin-bottom: 0.3rem; }
+    .footer a:hover { color: #f97316; }
+    .footer ul { list-style: none; }
+    .footer ul li { margin-bottom: 0.3rem; }
+    .footer .phone-large {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #f97316;
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+    .footer .legal-list li { margin-bottom: 0.2rem; }
+    .footer-bottom {
+      border-top: 1px solid #1e3a5f;
+      padding-top: 1.8rem;
+      margin-top: 2.5rem;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #94a3b8;
+    }
+    .footer-bottom .disclaimer {
+      font-size: 0.7rem;
+      color: #64748b;
+      max-width: 900px;
+      margin: 0.5rem auto 0;
+      line-height: 1.5;
+    }
+    .footer-social a {
+      color: #94a3b8;
+      margin-right: 1rem;
+      font-size: 1.2rem;
+      transition: 0.2s;
+    }
+    .footer-social a:hover { color: #f97316; }
+
+    /* responsive */
+    @media (max-width: 900px) {
+      .hero h1 { font-size: 2.8rem; }
+      .hero { padding: 3rem 0 4rem; }
+      .section-title { font-size: 2.2rem; }
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 2rem; }
+      .hero p { font-size: 1rem; }
+      .btn-cta { font-size: 1rem; padding: 0.7rem 1.6rem; }
+      .section-title { font-size: 1.8rem; }
+      .contact-info-card, .contact-form { padding: 1.5rem; }
+      .cta-banner h2 { font-size: 1.8rem; }
+      .map-container iframe { height: 250px; }
+    }
+    /* sticky phone */
+    .sticky-phone {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #ea580c;
+      color: #fff;
+      padding: 0.8rem 1.6rem;
+      border-radius: 60px;
+      font-weight: 700;
+      box-shadow: 0 10px 30px rgba(234, 88, 12, 0.5);
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .sticky-phone i { font-size: 1.6rem; }
+    @media (min-width: 700px) { .sticky-phone { display: none; } }
+  </style>
+</head>
+<body>
+<!-- HEADER (exactly as in your other pages) -->
+<header class="header">
+  <div class="container header-inner">
+    <div class="logo">
+      <div class="logo-icon">LP</div>
+      <div>
+        <div class="logo-text">Local <span>Plumbers</span></div>
+        <div class="tagline">Contact Us • Dallas Plumbing Experts</div>
+      </div>
+    </div>
+    <a href="tel:+18442129477" class="header-phone"><i class="fas fa-phone-alt"></i> (844) 212-9477</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero-content">
+    <h1>Contact <span>Local Plumbers</span></h1>
+    <p>Reach out to us for emergency plumbing services in Dallas. We're available 24/7 to help.</p>
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section style="background:#fff;">
+  <div class="container">
+    <div class="contact-grid">
+      <!-- Contact Info -->
+      <div class="contact-info-card">
+        <h3>Get in Touch</h3>
+        <p style="color:#4b5563; margin-bottom:2rem;">We're here to help with all your plumbing needs. Call us anytime for emergency service.</p>
+
+        <div class="contact-info-item">
+          <i class="fas fa-phone-alt"></i>
+          <div>
+            <span class="label">Phone</span>
+            <span class="value"><a href="tel:+18442129477" style="color:#ea580c; font-weight:600;">(844) 212-9477</a></span>
+            <span style="display:block; color:#4b5563; font-size:0.85rem;">Available 24/7</span>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <i class="fas fa-envelope"></i>
+          <div>
+            <span class="label">Email</span>
+            <span class="value"><a href="mailto:info@localplumbers.online" style="color:#ea580c;">info@localplumbers.online</a></span>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <i class="fas fa-location-dot"></i>
+          <div>
+            <span class="label">Service Area</span>
+            <span class="value">Dallas, TX &amp; Surrounding Areas</span>
+            <span style="display:block; color:#4b5563; font-size:0.85rem;">Serving Wylie, Rockwall, Rowlett, Sachse, Garland, Mesquite &amp; more</span>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <i class="fas fa-clock"></i>
+          <div>
+            <span class="label">Hours</span>
+            <span class="value">24/7 Emergency Service</span>
+            <span style="display:block; color:#4b5563; font-size:0.85rem;">Open 365 days a year</span>
+          </div>
+        </div>
+
+        <div style="margin-top:2rem; padding-top:1.5rem; border-top:1px solid #e5e7eb;">
+          <span style="font-weight:600; display:block; margin-bottom:0.5rem;">Follow Us</span>
+          <div style="display:flex; gap:1rem;">
+            <a href="#" style="color:#0a2540; font-size:1.5rem; transition:0.2s;"><i class="fab fa-facebook"></i></a>
+            <a href="#" style="color:#0a2540; font-size:1.5rem; transition:0.2s;"><i class="fab fa-twitter"></i></a>
+            <a href="#" style="color:#0a2540; font-size:1.5rem; transition:0.2s;"><i class="fab fa-instagram"></i></a>
+            <a href="#" style="color:#0a2540; font-size:1.5rem; transition:0.2s;"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="contact-form">
+        <h3>Send Us a Message</h3>
+        <p style="color:#4b5563; margin-bottom:1.5rem; font-size:0.95rem;">We'll respond within 30 minutes during business hours.</p>
+        <form id="contactForm" onsubmit="handleSubmit(event)">
+          <div class="form-group">
+            <label for="name">Full Name *</label>
+            <input type="text" id="name" placeholder="John Doe" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number *</label>
+            <input type="tel" id="phone" placeholder="(214) 555-1234" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="john@example.com">
+          </div>
+          <div class="form-group">
+            <label for="service">Service Needed</label>
+            <select id="service">
+              <option value="">Select a service...</option>
+              <option value="emergency">Emergency Plumber</option>
+              <option value="drain">Drain Cleaning</option>
+              <option value="water-heater">Water Heater Repair</option>
+              <option value="sewer">Sewer Line Repair</option>
+              <option value="leak">Leak Detection</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Message *</label>
+            <textarea id="message" placeholder="Describe your plumbing issue..." required></textarea>
+          </div>
+          <button type="submit" class="btn-submit"><i class="fas fa-paper-plane"></i> Send Message</button>
+        </form>
+        <div id="formSuccess" style="display:none; margin-top:1rem; padding:1rem; background:#d1fae5; border-radius:16px; color:#065f46; text-align:center;">
+          <i class="fas fa-check-circle" style="font-size:1.5rem; display:block; margin-bottom:0.5rem;"></i>
+          Thank you! We'll get back to you shortly.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAP SECTION -->
+<section style="background:#f3f4f6;">
+  <div class="container">
+    <h2 class="section-title">Find Us</h2>
+    <p class="section-sub">We proudly serve the entire Dallas metro area. Here's where we're located.</p>
+    <div class="map-container">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d214587.60002726894!2d-96.87198617304686!3d32.82058684434041!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864c19f77b45974b%3A0xb9ec9ba4f647678f!2sDallas%2C%20TX!5e0!3m2!1sen!2sus!4v1700000000000" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA BANNER -->
+<section>
+  <div class="container">
+    <div class="cta-banner">
+      <h2>Need Emergency Plumbing? <br>Call Us Now – 24/7</h2>
+      <a href="tel:+18442129477" class="btn-cta" style="background:#ea580c; margin-top:1.5rem;"><i class="fas fa-phone-alt"></i> (844) 212-9477</a>
+      <p style="margin-top:1rem; opacity:0.8;">Free estimates • No overtime charges</p>
+    </div>
+  </div>
+</section>
+
+<!-- FULL FOOTER (exactly as in your other pages) -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <!-- Brand -->
+      <div>
+        <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.8rem;">
+          <div style="background:#fff; color:#0a2540; width:40px; height:40px; border-radius:12px; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:1.4rem;">LP</div>
+          <span style="font-size:1.6rem; font-weight:700; color:#fff;">Local <span style="color:#ea580c;">Plumbers</span></span>
+        </div>
+        <p style="color:#94a3b8; font-size:0.9rem; max-width:240px;">Trusted Emergency Plumber Dallas serving the greater Dallas area with fast, reliable plumbing solutions.</p>
+        <div class="footer-social" style="margin-top:1rem;">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="https://www.primeflowpros.online/">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </div>
+
+      <!-- Our Services -->
+      <div>
+        <h4>Our Services</h4>
+        <ul>
+          <li><a href="https://www.primeflowpros.online/emergency-plumber-dallas">Emergency Plumber Dallas</a></li>
+          <li><a href="https://www.primeflowpros.online/emergency-plumbing-dallas/">Emergency Plumbing Dallas</a></li>
+          <li><a href="https://www.primeflowpros.online/24-hour-plumber-dallas/">24 Hour Plumber Dallas</a></li>
+          <li><a href="https://www.primeflowpros.online/24-hour-plumbing-dallas/">24 Hour Plumbing Dallas</a></li>
+          <li><a href="#">Drain Cleaning Dallas</a></li>
+          <li><a href="#">Water Heater Repair Dallas</a></li>
+          <li><a href="#">Sewer Line Repair Dallas</a></li>
+          <li><a href="#">Leak Detection Dallas</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact & Legal -->
+      <div>
+        <h4>Contact &amp; Legal</h4>
+        <a href="tel:+18442129477" class="phone-large">(844) 212-9477</a>
+        <span style="color:#94a3b8; display:block; margin-bottom:0.5rem;">Available 24/7</span>
+        <p style="color:#94a3b8; font-size:0.9rem;"><i class="fas fa-location-dot" style="color:#ea580c; margin-right:0.3rem;"></i> Dallas, TX &amp; Surrounding Areas</p>
+        <div style="margin-top:1rem; border-top:1px solid #1e3a5f; padding-top:1rem;">
+          <h5 style="color:#94a3b8; font-size:0.85rem; font-weight:600; margin-bottom:0.5rem;">Legal</h5>
+          <ul class="legal-list">
+            <li><a href="#">Terms &amp; Conditions</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Disclaimer</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="footer-bottom">
+      <p style="font-weight:500; color:#cbd5e1;">Disclaimer:</p>
+      <p class="disclaimer">This site is a free service to assist homeowners in connecting with local service providers. All contractors/providers are independent and this site does not warrant or guarantee any work performed. It is the responsibility of the homeowner to verify that the hired contractor furnishes the necessary license and insurance required for the work being performed. All persons depicted in a photo or video are actors or models and not contractors listed on this site.</p>
+      <p class="disclaimer" style="margin-top:0.5rem;">Same-day and 24/7 emergency services are subject to provider participation, location, technician availability, and demand. Availability is not guaranteed and may vary by market and appointment capacity.</p>
+      <p style="margin-top:1.2rem; color:#94a3b8;">© 2026 Local Plumbers. All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- STICKY PHONE (mobile) -->
+<a href="tel:+18442129477" class="sticky-phone"><i class="fas fa-phone-alt"></i> Call Now</a>
+
+<script>
+  function handleSubmit(e) {
+    e.preventDefault();
+    const form = document.getElementById('contactForm');
+    const success = document.getElementById('formSuccess');
+    form.style.display = 'none';
+    success.style.display = 'block';
+    // Reset after 5 seconds (optional)
+    setTimeout(() => {
+      form.reset();
+      form.style.display = 'block';
+      success.style.display = 'none';
+    }, 5000);
+  }
+</script>
+
+<!-- Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": "Contact Local Plumbers",
+  "description": "Contact Local Plumbers in Dallas for 24/7 emergency plumbing services. Call, email, or visit our location.",
+  "url": "https://www.localplumbers.online/contact",
+  "telephone": "+18442129477",
+  "email": "info@localplumbers.online",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Dallas",
+    "addressRegion": "TX",
+    "addressCountry": "US"
+  }
+}
+</script>
+</body>
+</html>
