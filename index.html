@@ -386,10 +386,10 @@ details p{padding:0 0 20px;font-size:15.5px;color:var(--gray)}
           <label for="service">Service Needed</label>
           <select id="service" name="service" required>
             <option value="">Select a service…</option>
-            <option value="new-install">New Roof Installation</option>
-            <option value="full-replacement">Full Roof Replacement</option>
-            <option value="tear-off">Tear-Off &amp; Re-Roof</option>
-            <option value="storm-damage">Storm Damage Roof Replacement</option>
+            <option value="New Roof Installation">New Roof Installation</option>
+            <option value="Full Roof Replacement">Full Roof Replacement</option>
+            <option value="Tear-Off &amp; Re-Roof">Tear-Off &amp; Re-Roof</option>
+            <option value="Storm Damage Roof Replacement">Storm Damage Roof Replacement</option>
           </select>
         </div>
 
@@ -403,7 +403,7 @@ details p{padding:0 0 20px;font-size:15.5px;color:var(--gray)}
           <label for="consent">I agree to be contacted by phone, text, or email about my roofing request. Consent is not a condition of purchase.</label>
         </div>
 
-        <button type="submit" class="btn btn-call btn-block">Get My Callback</button>
+        <button type="submit" class="btn btn-call btn-block" id="submitBtn">Get My Callback</button>
         <p class="form-note">By submitting, you agree to our Terms &amp; Privacy Policy.</p>
       </form>
 
@@ -648,74 +648,111 @@ details p{padding:0 0 20px;font-size:15.5px;color:var(--gray)}
 </div>
 
 <script>
-  /* Footer year */
-  document.getElementById('year').textContent = new Date().getFullYear();
+/* ============================================================
+   CONFIG — यहाँ अपना Google Apps Script Web App URL डालो
+   ============================================================ */
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwIyagfzb_2591vqyS7tjTYWy2epg84cD3otV347zrpW2PYZUvrMCUZ3YvVT7YchZz4/exec";
 
-  /* Form handling */
-  const form = document.getElementById('roofForm');
-  const thankYou = document.getElementById('thankYou');
+/* Footer year */
+document.getElementById('year').textContent = new Date().getFullYear();
 
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
+/* Form elements */
+const form = document.getElementById('roofForm');
+const thankYou = document.getElementById('thankYou');
+const submitBtn = document.getElementById('submitBtn');
 
-    const fname = document.getElementById('fname');
-    const phone = document.getElementById('phone');
-    const zip   = document.getElementById('zip');
-    const service = document.getElementById('service');
-    const homeowner = document.getElementById('homeowner');
-    const consent = document.getElementById('consent');
+/* Helper: URL se UTM parameters nikalo (traffic source tracking ke liye) */
+function getUTM(param) {
+  const url = new URL(window.location.href);
+  return url.searchParams.get(param) || "";
+}
 
-    // Simple validation
-    if (!fname.value.trim()) { fname.focus(); return; }
+/* Form submit handler */
+form.addEventListener('submit', async function (e) {
+  e.preventDefault();
 
-    const digits = phone.value.replace(/\D/g, '');
-    if (digits.length < 10) {
-      alert('Please enter a valid 10-digit phone number.');
-      phone.focus();
-      return;
-    }
+  const fname     = document.getElementById('fname');
+  const phone     = document.getElementById('phone');
+  const zip       = document.getElementById('zip');
+  const service   = document.getElementById('service');
+  const homeowner = document.getElementById('homeowner');
+  const consent   = document.getElementById('consent');
 
-    if (!/^\d{5}$/.test(zip.value.trim())) {
-      alert('Please enter a valid 5-digit ZIP code.');
-      zip.focus();
-      return;
-    }
+  /* ---------- VALIDATION ---------- */
+  if (!fname.value.trim()) {
+    alert('Please enter your full name.');
+    fname.focus();
+    return;
+  }
 
-    if (!service.value) { service.focus(); return; }
+  const digits = phone.value.replace(/\D/g, '');
+  if (digits.length < 10) {
+    alert('Please enter a valid 10-digit phone number.');
+    phone.focus();
+    return;
+  }
 
-    if (!homeowner.checked) {
-      alert('This request service is for homeowners or authorized decision makers only.');
-      return;
-    }
+  if (!/^\d{5}$/.test(zip.value.trim())) {
+    alert('Please enter a valid 5-digit ZIP code.');
+    zip.focus();
+    return;
+  }
 
-    if (!consent.checked) {
-      alert('Please agree to be contacted to continue.');
-      return;
-    }
+  if (!service.value) {
+    alert('Please select a service.');
+    service.focus();
+    return;
+  }
 
-    /* ---- Yoursuccess state ---- */
+  if (!homeowner.checked) {
+    alert('This request service is for homeowners or authorized decision makers only.');
+    return;
+  }
+
+  if (!consent.checked) {
+    alert('Please agree to be contacted to continue.');
+    return;
+  }
+
+  /* ---------- LOADING STATE ---------- */
+  const originalBtnText = submitBtn.innerHTML;
+  submitBtn.disabled = true;
+  submitBtn.innerHTML = 'Submitting…';
+
+  /* ---------- PREPARE PAYLOAD ---------- */
+  const payload = {
+    name:      fname.value.trim(),
+    phone:     phone.value.trim(),
+    zip:       zip.value.trim(),
+    service:   service.value,
+    homeowner: true,
+    source:    getUTM('utm_source') || 'Landing Page',
+    medium:    getUTM('utm_medium') || '',
+    campaign:  getUTM('utm_campaign') || '',
+    page:      window.location.href,
+    timestamp: new Date().toISOString()
+  };
+
+  /* ---------- SEND TO GOOGLE SHEETS ---------- */
+  try {
+    await fetch(GOOGLE_SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors', // Google Apps Script ke liye zaroori
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify(payload)
+    });
+
+    /* Success state */
     form.style.display = 'none';
     thankYou.classList.add('show');
 
-    /* 
-      ==== BACKEND / CRM INTEGRATION ====
-      Send the lead to your CRM or endpoint here. Example:
-
-      fetch('https://your-endpoint.com/lead', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: fname.value.trim(),
-          phone: phone.value.trim(),
-          zip: zip.value.trim(),
-          service: service.value,
-          homeowner: true,
-          source: 'Landing Page',
-          page: window.location.href
-        })
-      });
-    */
-  });
+  } catch (err) {
+    console.error('Lead submit error:', err);
+    alert('Something went wrong. Please call +1 (844) 213-19-70 directly.');
+    submitBtn.disabled = false;
+    submitBtn.innerHTML = originalBtnText;
+  }
+});
 </script>
 
 </body>
