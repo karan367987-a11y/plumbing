@@ -16,17 +16,21 @@
   <style>
     /* Reset & base */
     * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
     body {
       font-family: 'Inter', sans-serif;
       background: #f9fafb;
       color: #1f2937;
       line-height: 1.6;
+      overflow-x: hidden;
     }
+    img, svg { max-width: 100%; height: auto; display: block; }
     a { text-decoration: none; color: inherit; }
     .container {
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 1.5rem;
+      width: 100%;
     }
     .heading-font { font-family: 'Playfair Display', serif; }
 
@@ -34,6 +38,7 @@
     .btn-cta {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 0.75rem;
       background: #ea580c;
       color: #fff;
@@ -45,6 +50,8 @@
       cursor: pointer;
       transition: 0.2s ease;
       box-shadow: 0 10px 20px -8px rgba(234, 88, 12, 0.4);
+      text-align: center;
+      max-width: 100%;
     }
     .btn-cta:hover { background: #c2410c; transform: scale(1.02); }
     .btn-outline {
@@ -57,7 +64,10 @@
       transition: 0.2s;
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 0.5rem;
+      text-align: center;
+      max-width: 100%;
     }
     .btn-outline:hover { background: #fff; color: #0a2540; }
 
@@ -76,17 +86,20 @@
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
+      gap: 0.8rem;
     }
     .logo {
       display: flex;
       align-items: center;
       gap: 0.5rem;
+      min-width: 0;
     }
     .logo-icon {
       background: #0a2540;
       color: #fff;
       width: 48px;
       height: 48px;
+      min-width: 48px;
       border-radius: 16px;
       display: flex;
       align-items: center;
@@ -98,6 +111,7 @@
       font-size: 1.6rem;
       font-weight: 700;
       letter-spacing: -0.5px;
+      line-height: 1.1;
     }
     .logo-text span { color: #ea580c; }
     .tagline {
@@ -115,6 +129,7 @@
       display: flex;
       align-items: center;
       gap: 0.6rem;
+      white-space: nowrap;
     }
     .header-phone i { color: #ea580c; }
 
@@ -143,10 +158,12 @@
       letter-spacing: 0.5px;
       text-transform: uppercase;
       margin-bottom: 1.5rem;
+      text-align: center;
     }
     .hero .emergency-tag .dot {
       width: 10px;
       height: 10px;
+      min-width: 10px;
       background: #34d399;
       border-radius: 50%;
       display: inline-block;
@@ -161,6 +178,7 @@
       line-height: 1.05;
       margin-bottom: 1.2rem;
       font-family: 'Playfair Display', serif;
+      word-wrap: break-word;
     }
     .hero h1 span { color: #f97316; }
     .hero p {
@@ -217,13 +235,14 @@
       font-weight: 700;
       margin-bottom: 0.5rem;
       font-family: 'Playfair Display', serif;
+      line-height: 1.15;
     }
     .section-sub { color: #4b5563; max-width: 700px; margin-bottom: 2.5rem; }
 
     /* service cards */
     .service-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(min(270px, 100%), 1fr));
       gap: 2rem;
     }
     .service-card {
@@ -242,7 +261,7 @@
     /* Process */
     .process-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(min(150px, 100%), 1fr));
       gap: 1.5rem;
       text-align: center;
     }
@@ -262,10 +281,12 @@
       font-weight: 600;
       display: flex;
       justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
       cursor: pointer;
       background: #fff;
     }
-    .faq-question i { transition: 0.2s; }
+    .faq-question i { transition: 0.2s; flex-shrink: 0; margin-top: 0.3rem; }
     .faq-answer { padding: 0 1.8rem 1.5rem; color: #374151; display: none; }
     .faq-item.open .faq-answer { display: block; }
     .faq-item.open .faq-question i { transform: rotate(180deg); }
@@ -278,7 +299,7 @@
       border-radius: 60px;
       text-align: center;
     }
-    .cta-banner h2 { font-size: 2.8rem; font-family: 'Playfair Display', serif; }
+    .cta-banner h2 { font-size: 2.8rem; font-family: 'Playfair Display', serif; line-height: 1.2; }
 
     /* Footer – full */
     .footer {
@@ -288,7 +309,7 @@
     }
     .footer-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
       gap: 2.5rem;
     }
     .footer h4 {
@@ -297,7 +318,7 @@
       margin-bottom: 1rem;
       font-size: 1.1rem;
     }
-    .footer a { color: #94a3b8; transition: 0.2s; display: inline-block; margin-bottom: 0.3rem; }
+    .footer a { color: #94a3b8; transition: 0.2s; display: inline-block; margin-bottom: 0.3rem; word-break: break-word; }
     .footer a:hover { color: #f97316; }
     .footer ul { list-style: none; }
     .footer ul li { margin-bottom: 0.3rem; }
@@ -307,6 +328,7 @@
       color: #f97316;
       display: block;
       margin-bottom: 0.2rem;
+      word-break: break-word;
     }
     .footer .legal-list li { margin-bottom: 0.2rem; }
     .footer-bottom {
@@ -336,13 +358,97 @@
     @media (max-width: 900px) {
       .hero h1 { font-size: 2.8rem; }
       .hero { padding: 3.5rem 0 4rem; }
+      .section-title { font-size: 2.2rem; }
+      .cta-banner { padding: 3rem 1.5rem; border-radius: 40px; }
+      .cta-banner h2 { font-size: 2.2rem; }
+      .service-grid { gap: 1.5rem; }
+      section { padding: 3.2rem 0; }
     }
+
     @media (max-width: 600px) {
-      .hero h1 { font-size: 2rem; }
-      .hero p { font-size: 1rem; }
-      .btn-cta { font-size: 1rem; padding: 0.7rem 1.6rem; }
-      .section-title { font-size: 2rem; }
+      .container { padding: 0 1rem; }
+
+      /* Header stacks neatly */
+      .header { padding: 0.7rem 0; }
+      .header-inner {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+        gap: 0.7rem;
+      }
+      .logo { justify-content: center; }
+      .logo-icon { width: 42px; height: 42px; min-width: 42px; font-size: 1.5rem; border-radius: 12px; }
+      .logo-text { font-size: 1.35rem; }
+      .tagline { font-size: 0.65rem; }
+      .header-phone {
+        justify-content: center;
+        width: 100%;
+        padding: 0.7rem 1rem;
+        font-size: 1rem;
+      }
+
+      /* Hero */
+      .hero { padding: 2.8rem 0 3.2rem; }
+      .hero h1 { font-size: 2rem; line-height: 1.15; }
+      .hero p { font-size: 1rem; margin-bottom: 1.8rem; }
+      .hero .emergency-tag { font-size: 0.68rem; padding: 0.35rem 0.9rem; }
+      .hero .cta-group { flex-direction: column; align-items: stretch; }
+      .btn-cta { font-size: 1rem; padding: 0.85rem 1.4rem; width: 100%; }
+      .btn-outline { width: 100%; padding: 0.75rem 1.4rem; }
+      .hero .hero-badges { gap: 0.6rem; margin-top: 1.8rem; }
+      .hero .badge { font-size: 0.78rem; padding: 0.35rem 0.9rem; }
+
+      /* Trust bar */
+      .trust-bar { padding: 1.3rem 0; }
+      .trust-grid { flex-direction: column; align-items: center; gap: 0.8rem; }
+      .trust-item { justify-content: center; font-size: 0.95rem; }
+      .trust-item i { font-size: 1.6rem; }
+
+      /* Sections */
+      section { padding: 2.6rem 0; }
+      .section-title { font-size: 1.75rem; }
+      .section-sub { margin-bottom: 1.8rem; font-size: 0.95rem; }
+
+      /* Cards / grids */
+      .service-grid { grid-template-columns: 1fr; gap: 1.1rem; }
+      .service-card { padding: 1.5rem 1.2rem; border-radius: 22px; }
+      .service-card i { font-size: 2.2rem; padding: 0.65rem; border-radius: 16px; margin-bottom: 1rem; }
+      .service-card h3 { font-size: 1.2rem; }
+      .process-grid { grid-template-columns: repeat(2, 1fr); gap: 0.9rem; }
+      .process-step { padding: 1.2rem 0.7rem; border-radius: 24px; font-size: 0.9rem; }
+      .process-step .num { font-size: 1.5rem; }
+
+      /* "Why fast" inline grid collapses to 1 column */
+      ul[style*="grid-template-columns:1fr 1fr"] {
+        grid-template-columns: 1fr !important;
+        gap: 0.6rem !important;
+      }
+
+      /* FAQ */
+      .faq-question { padding: 1rem 1.1rem; font-size: 0.95rem; }
+      .faq-answer { padding: 0 1.1rem 1.1rem; font-size: 0.92rem; }
+
+      /* CTA banner */
+      .cta-banner { padding: 2.4rem 1.2rem; border-radius: 28px; }
+      .cta-banner h2 { font-size: 1.6rem; }
+      .cta-banner .btn-cta { width: 100%; }
+
+      /* Footer */
+      .footer { padding: 2.4rem 0 1.2rem; }
+      .footer-grid { gap: 1.8rem; text-align: left; }
+      .footer .phone-large { font-size: 1.4rem; }
+      .footer-bottom { font-size: 0.75rem; }
+      .footer-bottom .disclaimer { font-size: 0.68rem; }
     }
+
+    @media (max-width: 380px) {
+      .hero h1 { font-size: 1.7rem; }
+      .section-title { font-size: 1.55rem; }
+      .logo-text { font-size: 1.2rem; }
+      .header-phone { font-size: 0.92rem; }
+      .cta-banner h2 { font-size: 1.4rem; }
+    }
+
     /* sticky phone */
     .sticky-phone {
       position: fixed;
@@ -360,6 +466,21 @@
       gap: 0.8rem;
     }
     .sticky-phone i { font-size: 1.6rem; }
+
+    @media (max-width: 699px) {
+      .sticky-phone {
+        left: 16px;
+        right: 16px;
+        bottom: 14px;
+        justify-content: center;
+        padding: 0.85rem 1rem;
+        font-size: 1.05rem;
+        border-radius: 50px;
+      }
+      .sticky-phone i { font-size: 1.35rem; }
+      body { padding-bottom: 74px; }
+    }
+
     @media (min-width: 700px) { .sticky-phone { display: none; } }
   </style>
 </head>
@@ -374,7 +495,7 @@
         <div class="tagline">Emergency Plumber Dallas • 24/7 Service</div>
       </div>
     </div>
-    <a href="tel:+18442135933" class="header-phone"><i class="fas fa-phone-alt"></i> (844) 213-5933</a>
+    <a href="tel:+18882175167" class="header-phone"><i class="fas fa-phone-alt"></i> (888) 217-5167</a>
   </div>
 </header>
 
@@ -387,7 +508,7 @@
     <h1>Emergency Plumber Dallas <br><span>You Can Trust 24/7</span></h1>
     <p>Fast response for burst pipes, drain clogs, water heater failures &amp; sewer emergencies. Same-day Emergency Plumbing Dallas.</p>
     <div class="cta-group">
-      <a href="tel:+18442135933" class="btn-cta"><i class="fas fa-phone-volume"></i> CALL NOW: (844) 213-5933</a>
+      <a href="tel:+18882175167" class="btn-cta"><i class="fas fa-phone-volume"></i> CALL NOW: (888) 217-5167</a>
       <a href="#services" class="btn-outline"><i class="fas fa-tools"></i> Get Same-Day Service</a>
     </div>
     <div class="hero-badges">
@@ -534,7 +655,7 @@
   <div class="container">
     <div class="cta-banner">
       <h2>Need Emergency Plumbing Dallas? <br>Call Now for Immediate Help</h2>
-      <a href="tel:+18442135933" class="btn-cta" style="background:#ea580c; margin-top:1.5rem;"><i class="fas fa-phone-alt"></i> (844) 213-5933</a>
+      <a href="tel:+18882175167" class="btn-cta" style="background:#ea580c; margin-top:1.5rem;"><i class="fas fa-phone-alt"></i> (888) 217-5167</a>
       <p style="margin-top:1rem; opacity:0.8;">Available 24/7 • No overtime charges</p>
     </div>
   </div>
@@ -588,7 +709,7 @@
       <!-- Contact & Legal -->
       <div>
         <h4>Contact &amp; Legal</h4>
-        <a href="tel:+18442135933" class="phone-large">(844) 213-5933</a>
+        <a href="tel:+18882175167" class="phone-large">(888) 217-5167</a>
         <span style="color:#94a3b8; display:block; margin-bottom:0.5rem;">Available 24/7</span>
         <p style="color:#94a3b8; font-size:0.9rem;"><i class="fas fa-location-dot" style="color:#ea580c; margin-right:0.3rem;"></i> Dallas, TX &amp; Surrounding Areas</p>
         <div style="margin-top:1rem; border-top:1px solid #1e3a5f; padding-top:1rem;">
@@ -613,7 +734,7 @@
 </footer>
 
 <!-- STICKY PHONE (mobile) -->
-<a href="tel:+18442135933" class="sticky-phone"><i class="fas fa-phone-alt"></i> Call Now</a>
+<a href="tel:+18882175167" class="sticky-phone"><i class="fas fa-phone-alt"></i> Call Now</a>
 
 <script>
   function toggleFAQ(el) {
@@ -635,7 +756,7 @@
   "@type": "PlumbingService",
   "name": "Local Plumbers",
   "description": "Emergency Plumbing Dallas TX, 24/7 burst pipe repair, drain cleaning, water heater, sewer.",
-  "telephone": "+18442129477",
+  "telephone": "+18882175167",
   "areaServed": "Dallas, Texas",
   "priceRange": "$$"
 }
